@@ -1,7 +1,7 @@
 import CoreLocation
 import GLKit
 
-struct Polygon {
+struct UIPolygon {
     let coordinates: [CLLocationCoordinate2D]
     let centerCoordinate: CLLocationCoordinate2D
     let area: Double

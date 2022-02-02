@@ -14,6 +14,7 @@ class HomeViewController: UIViewController {
         mapView.translatesAutoresizingMaskIntoConstraints = false
         mapView.delegate = self
         mapView.showsUserLocation = true
+        mapView.register(CustomAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         return mapView
     }()
 
@@ -34,6 +35,7 @@ class HomeViewController: UIViewController {
     init(interactor: HomeInteractor) {
         self.interactor = interactor
         super.init(nibName: nil, bundle: nil)
+        interactor.delegate = self
     }
 
     required init?(coder: NSCoder) {
@@ -70,7 +72,18 @@ class HomeViewController: UIViewController {
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.requestLocation()
+            interactor.load()
         }
+    }
+
+    func drawPolygons() {
+        let uiPolygons = interactor.polygons.map { PolygonMapper.convertPolygonToUIPolygon(polygon: $0) }
+        uiPolygons.forEach { uiPolygon in
+            let polygon = MKPolygon(coordinates: uiPolygon.coordinates, count: uiPolygon.coordinates.count)
+            mapView.addOverlay(polygon)
+            addCenterPin(to: uiPolygon)
+        }
+        locationManager.requestLocation()
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -94,13 +107,13 @@ class HomeViewController: UIViewController {
             let polygon = MKPolygon(coordinates: &interactor.currentCoordinates, count: interactor.currentCoordinates.count)
             mapView.addOverlay(polygon)
             let latestPolygon = PolygonBuilder.build(from: interactor.currentCoordinates)
-            interactor.polygons.append(latestPolygon)
+            interactor.add(latestPolygon)
             addCenterPin(to: latestPolygon)
             interactor.currentCoordinates = [] // Reset points
         }
     }
 
-    func centerMapToLatestPolygon(_ polygon: Polygon) {
+    func centerMapToLatestPolygon(_ polygon: UIPolygon) {
         let minLatitudinalCoordinate: CLLocationCoordinate2D = polygon.coordinates.min(by: { $0.latitude < $1.latitude })!
         let maxLatitudinalCoordinate: CLLocationCoordinate2D = polygon.coordinates.max(by: { $0.latitude < $1.latitude })!
         let minLongitudinalCoordinate: CLLocationCoordinate2D = polygon.coordinates.min(by: { $0.longitude < $1.longitude })!
@@ -126,14 +139,30 @@ class HomeViewController: UIViewController {
         addOverlayButton.isEditing.toggle()
 
         if let latestPolygon = interactor.polygons.last, !interactor.isAddingOverlay {
-            centerMapToLatestPolygon(latestPolygon)
+            centerMapToLatestPolygon(PolygonMapper.convertPolygonToUIPolygon(polygon: latestPolygon))
         }
     }
 
-    func addCenterPin(to polygon: Polygon) {
+    func addCenterPin(to polygon: UIPolygon) {
         let annotation = MKPointAnnotation()
-        annotation.coordinate = PolygonManager.shared.polygonCenterOfMass(polygon.coordinates)
+        annotation.coordinate = polygon.centerCoordinate
+        annotation.title = String(format: "Area is: %.2f square metres", polygon.area)
+        annotation.subtitle = String(
+            format: "Lat: %f, Lon: %f",
+            polygon.centerCoordinate.latitude,
+            polygon.centerCoordinate.longitude
+        )
         mapView.addAnnotation(annotation)
+    }
+}
+
+extension HomeViewController: HomeInteractorDelegate {
+    func interactorDidLoadPolygons(_ interactor: HomeInteractor) {
+        drawPolygons()
+    }
+
+    func interactorFailedToLoadPolygons(_ interactor: HomeInteractor, error: Error) {
+        print(error.localizedDescription)
     }
 }
 
@@ -153,6 +182,7 @@ extension HomeViewController: MKMapViewDelegate {
         }
         return MKPolylineRenderer(overlay: overlay)
     }
+
 }
 
 extension HomeViewController: CLLocationManagerDelegate {

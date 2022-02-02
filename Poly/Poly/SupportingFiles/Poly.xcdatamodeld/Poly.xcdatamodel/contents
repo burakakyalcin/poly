@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20075" systemVersion="21C52" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Entity" representedClassName="Entity" syncable="YES" codeGenerationType="class"/>
+    <entity name="Polygon" representedClassName="Polygon" syncable="YES">
+        <attribute name="area" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="centerCoordinate" maxCount="1" deletionRule="Nullify" destinationEntity="PolygonCoordinate" inverseName="centerCoordinate" inverseEntity="PolygonCoordinate"/>
+        <relationship name="coordinates" toMany="YES" deletionRule="Nullify" destinationEntity="PolygonCoordinate" inverseName="coordinates" inverseEntity="PolygonCoordinate"/>
+    </entity>
+    <entity name="PolygonCoordinate" representedClassName="PolygonCoordinate" syncable="YES">
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="centerCoordinate" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Polygon" inverseName="centerCoordinate" inverseEntity="Polygon"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Polygon" inverseName="coordinates" inverseEntity="Polygon"/>
+    </entity>
     <elements>
-        <element name="Entity" positionX="-63" positionY="-18" width="128" height="29"/>
+        <element name="Polygon" positionX="-36" positionY="27" width="128" height="74"/>
+        <element name="PolygonCoordinate" positionX="-54" positionY="-9" width="128" height="89"/>
     </elements>
 </model>

@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67371E0327A5DA4B00BDAF27 /* AddOverlayButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67371E0227A5DA4B00BDAF27 /* AddOverlayButton.swift */; };
-		67371E0627A5EAFF00BDAF27 /* Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67371E0527A5EAFF00BDAF27 /* Polygon.swift */; };
+		67371E0627A5EAFF00BDAF27 /* UIPolygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67371E0527A5EAFF00BDAF27 /* UIPolygon.swift */; };
 		67371E0927A603DA00BDAF27 /* CLLocationCoordinate2D+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67371E0827A603DA00BDAF27 /* CLLocationCoordinate2D+Utils.swift */; };
 		678D36F527A2041500020191 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D36F427A2041500020191 /* AppDelegate.swift */; };
 		678D36F727A2041500020191 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D36F627A2041500020191 /* SceneDelegate.swift */; };
@@ -24,11 +24,19 @@
 		678D390127A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D390027A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift */; };
 		67E4572827A752FE00ECF68C /* PolygonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4572727A752FE00ECF68C /* PolygonManager.swift */; };
 		67E4572A27A75ADD00ECF68C /* PolygonBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4572927A75ADD00ECF68C /* PolygonBuilder.swift */; };
+		67E4590B27A8A55300ECF68C /* Polygon+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4590727A8A55300ECF68C /* Polygon+CoreDataClass.swift */; };
+		67E4590C27A8A55300ECF68C /* Polygon+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4590827A8A55300ECF68C /* Polygon+CoreDataProperties.swift */; };
+		67E4590D27A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4590927A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift */; };
+		67E4590E27A8A55300ECF68C /* PolygonCoordinate+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4590A27A8A55300ECF68C /* PolygonCoordinate+CoreDataProperties.swift */; };
+		67E4591027A8A74100ECF68C /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4590F27A8A74100ECF68C /* PersistenceService.swift */; };
+		67E4591227A8A82800ECF68C /* PolygonMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4591127A8A82800ECF68C /* PolygonMapper.swift */; };
+		67E4591427A8ABD100ECF68C /* NSSet+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4591327A8ABD100ECF68C /* NSSet+Utils.swift */; };
+		67E4591627A8B4D500ECF68C /* CustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67E4591527A8B4D500ECF68C /* CustomAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		67371E0227A5DA4B00BDAF27 /* AddOverlayButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOverlayButton.swift; sourceTree = "<group>"; };
-		67371E0527A5EAFF00BDAF27 /* Polygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Polygon.swift; sourceTree = "<group>"; };
+		67371E0527A5EAFF00BDAF27 /* UIPolygon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPolygon.swift; sourceTree = "<group>"; };
 		67371E0827A603DA00BDAF27 /* CLLocationCoordinate2D+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Utils.swift"; sourceTree = "<group>"; };
 		678D36F127A2041500020191 /* Poly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Poly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		678D36F427A2041500020191 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +54,14 @@
 		678D390027A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannotUpdateLocationAlertBuilder.swift; sourceTree = "<group>"; };
 		67E4572727A752FE00ECF68C /* PolygonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonManager.swift; sourceTree = "<group>"; };
 		67E4572927A75ADD00ECF68C /* PolygonBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonBuilder.swift; sourceTree = "<group>"; };
+		67E4590727A8A55300ECF68C /* Polygon+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polygon+CoreDataClass.swift"; sourceTree = "<group>"; };
+		67E4590827A8A55300ECF68C /* Polygon+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Polygon+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		67E4590927A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PolygonCoordinate+CoreDataClass.swift"; sourceTree = "<group>"; };
+		67E4590A27A8A55300ECF68C /* PolygonCoordinate+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PolygonCoordinate+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		67E4590F27A8A74100ECF68C /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		67E4591127A8A82800ECF68C /* PolygonMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolygonMapper.swift; sourceTree = "<group>"; };
+		67E4591327A8ABD100ECF68C /* NSSet+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSet+Utils.swift"; sourceTree = "<group>"; };
+		67E4591527A8B4D500ECF68C /* CustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				67371E0227A5DA4B00BDAF27 /* AddOverlayButton.swift */,
+				67E4591527A8B4D500ECF68C /* CustomAnnotationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -70,7 +87,11 @@
 		67371E0427A5EAF400BDAF27 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				67371E0527A5EAFF00BDAF27 /* Polygon.swift */,
+				67E4590727A8A55300ECF68C /* Polygon+CoreDataClass.swift */,
+				67E4590827A8A55300ECF68C /* Polygon+CoreDataProperties.swift */,
+				67E4590927A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift */,
+				67E4590A27A8A55300ECF68C /* PolygonCoordinate+CoreDataProperties.swift */,
+				67371E0527A5EAFF00BDAF27 /* UIPolygon.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				67371E0827A603DA00BDAF27 /* CLLocationCoordinate2D+Utils.swift */,
+				67E4591327A8ABD100ECF68C /* NSSet+Utils.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -156,6 +178,8 @@
 				678D371727A206FE00020191 /* LocationManager.swift */,
 				67E4572727A752FE00ECF68C /* PolygonManager.swift */,
 				67E4572927A75ADD00ECF68C /* PolygonBuilder.swift */,
+				67E4590F27A8A74100ECF68C /* PersistenceService.swift */,
+				67E4591127A8A82800ECF68C /* PolygonMapper.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -252,16 +276,24 @@
 			files = (
 				67E4572A27A75ADD00ECF68C /* PolygonBuilder.swift in Sources */,
 				67371E0327A5DA4B00BDAF27 /* AddOverlayButton.swift in Sources */,
+				67E4590B27A8A55300ECF68C /* Polygon+CoreDataClass.swift in Sources */,
 				678D386127A2164500020191 /* AlertBuilder.swift in Sources */,
+				67E4590E27A8A55300ECF68C /* PolygonCoordinate+CoreDataProperties.swift in Sources */,
+				67E4591627A8B4D500ECF68C /* CustomAnnotationView.swift in Sources */,
+				67E4591027A8A74100ECF68C /* PersistenceService.swift in Sources */,
 				678D390127A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift in Sources */,
+				67E4590C27A8A55300ECF68C /* Polygon+CoreDataProperties.swift in Sources */,
 				678D36F927A2041500020191 /* HomeViewController.swift in Sources */,
 				67E4572827A752FE00ECF68C /* PolygonManager.swift in Sources */,
 				678D385F27A2159A00020191 /* LocationServicesDisabledAlertBuilder.swift in Sources */,
 				678D36FF27A2041500020191 /* Poly.xcdatamodeld in Sources */,
+				67E4590D27A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift in Sources */,
 				678D370C27A204BD00020191 /* HomeCoordinator.swift in Sources */,
 				678D371827A206FE00020191 /* LocationManager.swift in Sources */,
-				67371E0627A5EAFF00BDAF27 /* Polygon.swift in Sources */,
+				67371E0627A5EAFF00BDAF27 /* UIPolygon.swift in Sources */,
 				678D370F27A204EA00020191 /* HomeInteractor.swift in Sources */,
+				67E4591427A8ABD100ECF68C /* NSSet+Utils.swift in Sources */,
+				67E4591227A8A82800ECF68C /* PolygonMapper.swift in Sources */,
 				678D36F527A2041500020191 /* AppDelegate.swift in Sources */,
 				678D36F727A2041500020191 /* SceneDelegate.swift in Sources */,
 				67371E0927A603DA00BDAF27 /* CLLocationCoordinate2D+Utils.swift in Sources */,
