@@ -4,7 +4,7 @@ struct PolygonManager {
     static let shared = PolygonManager()
     private init() { }
 
-    let kEarthRadius = 6378137.0
+    private let kEarthRadius = 6378137.0
 
     private func radians(degrees: Double) -> Double {
         return degrees * .pi / 180
