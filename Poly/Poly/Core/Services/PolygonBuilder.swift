@@ -5,7 +5,7 @@ struct PolygonBuilder {
         return UIPolygon(
             coordinates: coordinates,
             centerCoordinate: PolygonManager.shared.polygonCenterOfMass(coordinates),
-            area: PolygonManager.shared.signedPolygonArea(coordinates)
+            area: PolygonManager.shared.regionArea(coordinates)
         )
     }
 }
