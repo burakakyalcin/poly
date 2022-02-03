@@ -18,7 +18,6 @@
 		678D370427A2041600020191 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 678D370227A2041600020191 /* LaunchScreen.storyboard */; };
 		678D370C27A204BD00020191 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D370B27A204BD00020191 /* HomeCoordinator.swift */; };
 		678D370F27A204EA00020191 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D370E27A204EA00020191 /* HomeInteractor.swift */; };
-		678D371827A206FE00020191 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D371727A206FE00020191 /* LocationManager.swift */; };
 		678D385F27A2159A00020191 /* LocationServicesDisabledAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D385E27A2159A00020191 /* LocationServicesDisabledAlertBuilder.swift */; };
 		678D386127A2164500020191 /* AlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D37BF27A2154100020191 /* AlertBuilder.swift */; };
 		678D390127A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678D390027A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift */; };
@@ -48,7 +47,6 @@
 		678D370527A2041600020191 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		678D370B27A204BD00020191 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		678D370E27A204EA00020191 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		678D371727A206FE00020191 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		678D37BF27A2154100020191 /* AlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBuilder.swift; sourceTree = "<group>"; };
 		678D385E27A2159A00020191 /* LocationServicesDisabledAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationServicesDisabledAlertBuilder.swift; sourceTree = "<group>"; };
 		678D390027A21A1100020191 /* CannotUpdateLocationAlertBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CannotUpdateLocationAlertBuilder.swift; sourceTree = "<group>"; };
@@ -175,7 +173,6 @@
 		678D371527A2061300020191 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				678D371727A206FE00020191 /* LocationManager.swift */,
 				67E4572727A752FE00ECF68C /* PolygonManager.swift */,
 				67E4572927A75ADD00ECF68C /* PolygonBuilder.swift */,
 				67E4590F27A8A74100ECF68C /* PersistenceService.swift */,
@@ -289,7 +286,6 @@
 				678D36FF27A2041500020191 /* Poly.xcdatamodeld in Sources */,
 				67E4590D27A8A55300ECF68C /* PolygonCoordinate+CoreDataClass.swift in Sources */,
 				678D370C27A204BD00020191 /* HomeCoordinator.swift in Sources */,
-				678D371827A206FE00020191 /* LocationManager.swift in Sources */,
 				67371E0627A5EAFF00BDAF27 /* UIPolygon.swift in Sources */,
 				678D370F27A204EA00020191 /* HomeInteractor.swift in Sources */,
 				67E4591427A8ABD100ECF68C /* NSSet+Utils.swift in Sources */,
